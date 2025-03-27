@@ -1,0 +1,132 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Root variables for theme colors */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --card-bg: #f5f5f5;
+    --button-bg: #d32f2f;
+    --button-text: #ffffff;
+}
+
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --card-bg: #222;
+    --button-bg: #ff4444;
+}
+
+/* Container for main content */
+.container {
+    max-width: 90%;
+    margin: 20px auto;
+}
+
+/* Search bar */
+input {
+    width: 60%;
+    padding: 12px;
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #b71c1c;
+}
+
+/* Movies container */
+.movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Movie card */
+.movie {
+    background: var(--card-bg);
+    width: 250px;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Movie image */
+.movie img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Movie title */
+.movie h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+/* Movie rating */
+.movie p {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* Watchlist & Recommendation section titles */
+h2 {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 15px;
+    background: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+#theme-toggle:hover {
+    background: #b71c1c;
+}
