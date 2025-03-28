@@ -69,3 +69,11 @@ function updateWatchHistory(movies) {
     });
 }
 
+async function getRecommendations() {
+    if (watchHistory.length === 0) return;
+    const lastWatched = watchHistory[watchHistory.length - 1];
+    const res = await fetch(`${BASE_URL}/movie/${lastWatched.id}/recommendations?api_key=${API_KEY}`);
+    const data = await res.json();
+    displayRecommendations(data.results);
+}
+
