@@ -54,3 +54,17 @@ function displayWatchlist() {
         watchlistDiv.appendChild(movieElement);
     });
 }
+
+
+function removeFromWatchlist(id) {
+    watchlist = watchlist.filter(movie => movie.id !== id);
+    displayWatchlist();
+}
+
+function updateWatchHistory(movies) {
+    movies.forEach(movie => {
+        if (!watchHistory.some(m => m.id === movie.id)) {
+            watchHistory.push(movie);
+        }
+    });
+}
