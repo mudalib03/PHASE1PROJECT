@@ -38,3 +38,19 @@ function addToWatchlist(id, title, posterPath, rating) {
         displayWatchlist();
     }
 }
+
+function displayWatchlist() {
+    const watchlistDiv = document.getElementById('watchlist');
+    watchlistDiv.innerHTML = '';
+    watchlist.forEach(movie => {
+        const movieElement = document.createElement('div');
+        movieElement.classList.add('movie');
+        movieElement.innerHTML = `
+            <img src="${IMG_URL + movie.posterPath}" alt="${movie.title}">
+            <h3>${movie.title}</h3>
+            <p>Rating: ${movie.rating}</p>
+            <button onclick="removeFromWatchlist(${movie.id})">Remove</button>
+        `;
+        watchlistDiv.appendChild(movieElement);
+    });
+}
