@@ -14,3 +14,19 @@ async function searchMovies() {
     updateWatchHistory(data.results);
     getRecommendations();
 }
+
+function displayMovies(movies) {
+    const moviesDiv = document.getElementById('movies');
+    moviesDiv.innerHTML = '';
+    movies.forEach(movie => {
+        const movieElement = document.createElement('div');
+        movieElement.classList.add('movie');
+        movieElement.innerHTML = `
+            <img src="${IMG_URL + movie.poster_path}" alt="${movie.title}">
+            <h3>${movie.title}</h3>
+            <p>Rating: ${movie.vote_average}</p>
+            <button onclick="addToWatchlist(${movie.id}, '${movie.title}', '${movie.poster_path}', ${movie.vote_average})">Add to Watchlist</button>
+        `;
+        moviesDiv.appendChild(movieElement);
+    });
+}
