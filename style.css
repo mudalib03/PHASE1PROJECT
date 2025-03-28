@@ -1,4 +1,4 @@
-/* General styles */
+
 body {
     font-family: Arial, sans-serif;
     background-color: var(--bg-color);
@@ -9,7 +9,7 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Root variables for theme colors */
+
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
@@ -25,13 +25,13 @@ body {
     --button-bg: #ff4444;
 }
 
-/* Container for main content */
+
 .container {
     max-width: 90%;
     margin: 20px auto;
 }
 
-/* Search bar */
+
 input {
     width: 60%;
     padding: 12px;
@@ -57,7 +57,7 @@ button:hover {
     background: #b71c1c;
 }
 
-/* Movies container */
+
 .movies {
     display: flex;
     flex-wrap: wrap;
@@ -66,7 +66,7 @@ button:hover {
     padding: 20px;
 }
 
-/* Movie card */
+
 .movie {
     background: var(--card-bg);
     width: 250px;
