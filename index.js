@@ -77,3 +77,17 @@ async function getRecommendations() {
     displayRecommendations(data.results);
 }
 
+function displayRecommendations(movies) {
+    const recommendedDiv = document.getElementById('recommended');
+    recommendedDiv.innerHTML = '';
+    movies.forEach(movie => {
+        const movieElement = document.createElement('div');
+        movieElement.classList.add('movie');
+        movieElement.innerHTML = `
+            <img src="${IMG_URL + movie.poster_path}" alt="${movie.title}">
+            <h3>${movie.title}</h3>
+            <p>Rating: ${movie.vote_average}</p>
+        `;
+        recommendedDiv.appendChild(movieElement);
+    });
+}
