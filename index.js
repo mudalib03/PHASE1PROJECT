@@ -30,3 +30,11 @@ function displayMovies(movies) {
         moviesDiv.appendChild(movieElement);
     });
 }
+
+
+function addToWatchlist(id, title, posterPath, rating) {
+    if (!watchlist.some(movie => movie.id === id)) {
+        watchlist.push({ id, title, posterPath, rating });
+        displayWatchlist();
+    }
+}
